@@ -1,0 +1,16 @@
+<%= link_to "Add a Restaurant", "#" , class: "new-restaurant-button"%>
+
+<div class="new-restaurant-form">
+  <h1 id="header">Create a New Restaurant</h1>
+  <%= render partial: 'form' %>
+</div>
+<br>
+<br>
+<h3>All Restaurants</h3>
+
+<ul id="restaurants">
+  <% @restaurants.each do |restaurant| %>
+  <%= render partial: 'restaurant', locals: {restaurant: restaurant} %>
+  <% end %>
+</ul>
+

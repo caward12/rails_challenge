@@ -1,0 +1,22 @@
+<%= form_for @restaurant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+  <br><br>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <br><br>
+
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+  <br><br>
+
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+  <br><br>
+
+  <%= f.submit "Add Restaurant" , id: "add-rest"%>
+<% end %>

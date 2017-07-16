@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsChallenge</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="topnav" id="myTopnav">
+      <% if current_user %>
+        Welcome <%= current_user.email %>
+        <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Register", new_user_path %>  <%= link_to "Login", login_path %>
+      <% end %>
+    </div>
+
+    <% flash.each do |type, message| %>
+      <%= content_tag :div, message, class: "flash_#{type}" %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
